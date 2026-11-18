@@ -66,7 +66,7 @@ export function SiteHeader() {
             hover="brighten"
             className="hidden px-5 py-2.5 font-heading text-sm font-semibold tracking-wide uppercase sm:inline-flex"
           >
-            First week free
+            First class free
           </StarBorder>
 
           <Sheet>

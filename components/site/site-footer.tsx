@@ -17,9 +17,11 @@ export function SiteFooter() {
     <footer className="border-t bg-card/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
-          <Image src="/images/logo.png" alt={site.name} width={180} height={138} className="h-auto w-40" />
+          <Link href="/" aria-label={`${site.name} home`} className="w-fit">
+            <Image src="/images/logo-nav.png" alt="" width={80} height={56} className="h-14 w-auto" />
+          </Link>
           <p className="max-w-xs text-sm text-muted-foreground">
-            Oklahoma City’s only kickboxing-focused gym. Your first week is free.
+            Oklahoma City’s only kickboxing-focused gym. Your first class is free.
           </p>
           <a
             href={site.facebook}

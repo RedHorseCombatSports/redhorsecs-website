@@ -27,7 +27,6 @@ All values live in `styles/tokens.css`. Never hard-code colors in components.
 
 ## Launch checklist (not done yet)
 
-- [ ] Real class schedule on `/coachs-corner` (currently a "contact us for the schedule" card).
 - [ ] Remove `robots: { index: false }` in `app/layout.tsx` and the `X-Robots-Tag` header in `netlify.toml`.
 - [ ] Netlify: add a form notification email (must be a Netlify team member).
 - [ ] Point redhorsecs.com DNS at Netlify: change only the `@` A record and `www` CNAME at GoDaddy.

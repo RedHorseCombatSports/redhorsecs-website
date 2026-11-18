@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/site/contact-form"
 
 export const metadata: Metadata = {
   title: "Hit Us Up",
-  description: "Contact Red Horse Combat Training. Drop us a line and we’ll get back to you fast. Your first week is free.",
+  description: "Contact Red Horse Combat Training. Drop us a line and we’ll get back to you fast. Your first class is free.",
 }
 
 export default function ContactPage() {

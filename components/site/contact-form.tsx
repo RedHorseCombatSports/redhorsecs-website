@@ -83,7 +83,7 @@ export function ContactForm() {
       </div>
       <div className="grid gap-2">
         <Label htmlFor="message">Comment or message</Label>
-        <Textarea id="message" name="message" rows={5} placeholder="Interested in the free week? Questions about classes?" />
+        <Textarea id="message" name="message" rows={5} placeholder="Interested in a free class? Questions about classes?" />
       </div>
 
       {status === "error" && (

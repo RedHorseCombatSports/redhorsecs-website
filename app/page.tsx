@@ -27,7 +27,7 @@ const offeringIcons = [UsersIcon, DumbbellIcon, ZapIcon, ShieldIcon]
 
 const ticker = [
   "Oklahoma City’s top kickboxing gym",
-  "First week free",
+  "First class free",
   "Ego-free environment",
   "World-class coaching",
   "All levels welcome",
@@ -77,7 +77,7 @@ export default function HomePage() {
                   borderRadius="var(--radius-button)"
                   className="h-12 px-7 font-heading text-base font-semibold tracking-wide uppercase"
                 >
-                  Claim your free week
+                  Book your free class
                 </ShimmerButton>
               </Link>
               <Button asChild variant="outline" size="lg" className="h-12 px-6 font-heading text-base tracking-wide uppercase">
@@ -157,7 +157,7 @@ export default function HomePage() {
             })}
           </div>
           <p className="text-center font-heading text-2xl font-semibold tracking-wide uppercase">
-            The first week of class is <span className="text-brand">free</span>
+            Your first class is <span className="text-brand">free</span>
           </p>
         </div>
       </section>

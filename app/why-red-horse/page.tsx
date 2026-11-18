@@ -10,7 +10,7 @@ import BlurFadeIn from "@/components/site/fade-in"
 export const metadata: Metadata = {
   title: "Why Red Horse",
   description:
-    "Why train with Red Horse: Oklahoma’s only kickboxing-focused gym, intimate classes, superior conditioning and world-class coaching. First week free.",
+    "Why train with Red Horse: Oklahoma’s only kickboxing-focused gym, intimate classes, superior conditioning and world-class coaching. First class free.",
 }
 
 export default function WhyPage() {
@@ -86,7 +86,7 @@ export default function WhyPage() {
               ))}
             </div>
             <p className="font-heading text-xl font-semibold uppercase">
-              The first week of class is <span className="text-brand">free!</span>
+              Your first class is <span className="text-brand">free!</span>
             </p>
           </div>
         </BlurFadeIn>

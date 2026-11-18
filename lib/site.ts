@@ -86,7 +86,7 @@ export const faqs = [
   },
   {
     q: "How much does it cost?",
-    a: "We offer several membership options and class packs. Your first week is free – come try it out and we’ll go over pricing with you in person.",
+    a: "We offer several membership options and class packs. Your first class is free. Come try it out and we’ll go over pricing with you in person.",
   },
 ]
 
@@ -95,3 +95,14 @@ export const gallery = [
   31, 22, 13, 50, 49, 48, 42, 43, 44, 45, 46, 47, 40, 30, 21, 12, 39, 38, 32, 33, 34, 35,
   36, 37, 29, 20, 26, 27, 25, 11, 28, 24, 23, 19, 10, 53, 15, 16, 51, 17, 52, 18, 14, 41,
 ].map((n) => ({ src: `/images/gallery/${n}.jpg`, alt: `Red Horse training and fight photo ${n}` }))
+
+/** Weekly class times shown on /coachs-corner. `time: null` = no class that day. */
+export const schedule: { day: string; time: string | null }[] = [
+  { day: "Monday", time: "4:00 to 6:00 PM" },
+  { day: "Tuesday", time: "4:00 to 6:00 PM" },
+  { day: "Wednesday", time: "4:00 to 6:00 PM" },
+  { day: "Thursday", time: "4:00 to 6:00 PM" },
+  { day: "Friday", time: null },
+  { day: "Saturday", time: "10:00 to 11:00 AM" },
+  { day: "Sunday", time: null },
+]
