@@ -12,14 +12,8 @@ import {
   ZapIcon,
 } from "lucide-react"
 
-import { difference, faqs, gallery, offerings, site } from "@/lib/site"
+import { difference, gallery, offerings, site } from "@/lib/site"
 import { Button } from "@/components/ui/button"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { Marquee } from "@/components/magicui/marquee"
 import { ShimmerButton } from "@/components/magicui/shimmer-button"
 import { BorderBeam } from "@/components/magicui/border-beam"
@@ -55,11 +49,8 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-background via-background/80 to-background/20" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-background to-transparent" />
 
-        <div className="mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-[1.2fr_1fr]">
+        <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-[1.2fr_1fr]">
           <div className="flex flex-col gap-6">
-            <p className="w-fit rounded-(--radius-tag) border border-brand/40 bg-brand/10 px-3 py-1 font-heading text-sm font-semibold tracking-[0.2em] text-brand uppercase">
-              Oklahoma City · Kickboxing
-            </p>
             <h1 className="sr-only">{site.tagline}</h1>
             <div
               aria-hidden="true"
@@ -124,9 +115,8 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 lg:grid-cols-2">
         <div className="flex flex-col gap-6">
           <SectionHeading
-            eyebrow="Oklahoma City’s top kickboxing gym"
             title="Elite training in a supportive, ego-free space"
-            description="Whether you’re here to get fit, find a new passion, or grow stronger, our team-driven method delivers real results—physically and mentally."
+            description="Whether you’re here to get fit, find a new passion, or grow stronger, our team-driven method delivers real results, physically and mentally."
           />
           <Button asChild variant="link" className="w-fit px-0 font-heading text-base tracking-wide text-brand uppercase">
             <Link href="/why-red-horse">
@@ -149,7 +139,7 @@ export default function HomePage() {
       {/* ---------- The Red Horse difference ---------- */}
       <section className="border-y bg-card/40">
         <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-24">
-          <SectionHeading eyebrow="The Red Horse difference" title="Built for real progress" align="center" />
+          <SectionHeading title="Built for real progress" align="center" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {difference.map((d, i) => {
               const Icon = differenceIcons[i]
@@ -175,9 +165,8 @@ export default function HomePage() {
       {/* ---------- What we offer ---------- */}
       <section className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-24">
         <SectionHeading
-          eyebrow="What we offer"
           title="Training for every goal"
-          description="Getting back into shape, looking for a new hobby, or discovering your true potential—there’s a place for you here."
+          description="Getting back into shape, looking for a new hobby, or discovering your true potential. There’s a place for you here."
         />
         <div className="grid gap-px overflow-hidden rounded-(--radius-card) border bg-border sm:grid-cols-2">
           {offerings.map((o, i) => {
@@ -200,7 +189,7 @@ export default function HomePage() {
       {/* ---------- In action ---------- */}
       <section className="border-y bg-card/40 py-24">
         <div className="mx-auto mb-10 flex max-w-6xl flex-wrap items-end justify-between gap-6 px-4">
-          <SectionHeading eyebrow="In action" title="We don’t mess around" description="Real fighters. Real moments. Red Horse in motion." />
+          <SectionHeading title="We don’t mess around" description="Real fighters. Real moments. Red Horse in motion." />
           <Button asChild variant="outline" size="lg" className="font-heading tracking-wide uppercase">
             <Link href="/in-action">
               See the gallery <ArrowRightIcon />
@@ -224,27 +213,6 @@ export default function HomePage() {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background sm:w-40" />
         </div>
       </section>
-
-      {/* ---------- FAQ teaser ---------- */}
-      <section className="mx-auto grid max-w-6xl gap-12 px-4 py-24 lg:grid-cols-[1fr_1.4fr]">
-        <div className="flex flex-col gap-6">
-          <SectionHeading eyebrow="FAQ" title="You got questions?" description="We got answers. Here are the ones we hear most." />
-          <Button asChild variant="link" className="w-fit px-0 font-heading text-base tracking-wide text-brand uppercase">
-            <Link href="/faq">
-              All questions <ArrowRightIcon />
-            </Link>
-          </Button>
-        </div>
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.slice(0, 4).map((f, i) => (
-            <AccordionItem key={f.q} value={`q${i}`}>
-              <AccordionTrigger className="text-left text-base">{f.q}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
-
       <CallToAction />
     </>
   )

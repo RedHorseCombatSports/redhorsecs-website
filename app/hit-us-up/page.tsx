@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Hit us up" title="Your first move starts here" subtitle="Drop us a line and we’ll get back to you fast." />
+      <PageHero title="Your first move starts here" subtitle="Drop us a line and we’ll get back to you fast." />
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-20 lg:grid-cols-[1fr_1.3fr]">
         <div className="flex flex-col gap-6">
           <Image

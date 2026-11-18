@@ -17,7 +17,6 @@ export default function WhyPage() {
   return (
     <>
       <PageHero
-        eyebrow="Why Red Horse"
         title="Why train with Red Horse?"
         subtitle="Whether you’re getting back into shape, looking for a new hobby, or discovering your true potential, our focus is on steady, real-world progress. Using our iron-clad method of improvement, which emphasizes mutual assistance through collaborative effort, our students leave classes stronger, both physically and mentally."
       />
@@ -33,7 +32,7 @@ export default function WhyPage() {
             className="h-auto w-full rounded-(--radius-card) border"
           />
           <div className="flex flex-col gap-6">
-            <SectionHeading eyebrow="Programs" title="What we offer" />
+            <SectionHeading title="What we offer" />
             <ul className="flex flex-col gap-4">
               {offerings.map((o) => (
                 <li key={o.title} className="flex flex-col gap-1 border-l-2 border-brand pl-4">
@@ -48,7 +47,7 @@ export default function WhyPage() {
         {/* What you'll learn */}
         <BlurFadeIn className="grid items-center gap-12 lg:grid-cols-2">
           <div className="flex flex-col gap-6 lg:order-1">
-            <SectionHeading eyebrow="Skills" title="What you’ll learn" />
+            <SectionHeading title="What you’ll learn" />
             <ul className="flex flex-col gap-3">
               {learnings.map((l) => (
                 <li key={l} className="flex gap-3 text-lg">
@@ -77,7 +76,7 @@ export default function WhyPage() {
             className="h-auto w-full rounded-(--radius-card) border"
           />
           <div className="flex flex-col gap-6">
-            <SectionHeading eyebrow="Our edge" title="The Red Horse difference" />
+            <SectionHeading title="The Red Horse difference" />
             <div className="grid gap-3 sm:grid-cols-2">
               {difference.map((d) => (
                 <div key={d.title} className="rounded-(--radius-card) border bg-card p-5 shadow-(--shadow-card)">

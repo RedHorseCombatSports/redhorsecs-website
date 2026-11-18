@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function LocationPage() {
   return (
     <>
-      <PageHero eyebrow="Find us" title="Where to find us" subtitle="Have questions or want to stop by?" />
+      <PageHero title="Where to find us" subtitle="Have questions or want to stop by?" />
       <section className="mx-auto grid max-w-6xl gap-6 px-4 py-20 lg:grid-cols-[1fr_1.6fr]">
         <div className="flex flex-col gap-6 rounded-(--radius-card) border bg-card p-8 shadow-(--shadow-card)">
           <h2 className="text-3xl font-bold">{site.name}</h2>

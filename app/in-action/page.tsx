@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function InActionPage() {
   return (
     <>
-      <PageHero eyebrow="In action" title="We don’t mess around" subtitle="Real fighters. Real moments. Red Horse in motion." />
+      <PageHero title="We don’t mess around" subtitle="Real fighters. Real moments. Red Horse in motion." />
       <section className="mx-auto max-w-6xl px-4 py-16">
         <Gallery />
       </section>

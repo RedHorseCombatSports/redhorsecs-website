@@ -8,7 +8,7 @@ export const site = {
   shortName: "Red Horse",
   tagline: "Unleash your potential",
   description:
-    "Oklahoma City’s premier gym dedicated solely to kickboxing—offering elite-level training in a supportive, inclusive, and ego-free environment you won’t find anywhere else.",
+    "Oklahoma City’s premier gym dedicated solely to kickboxing, offering elite-level training in a supportive, inclusive, and ego-free environment you won’t find anywhere else.",
   address: {
     street: "3718 NW 50th St",
     city: "Oklahoma City",

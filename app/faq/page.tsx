@@ -30,7 +30,7 @@ const faqSchema = {
 export default function FaqPage() {
   return (
     <>
-      <PageHero eyebrow="FAQ" title="Frequently asked questions" subtitle="You got questions? We got answers." />
+      <PageHero title="Frequently asked questions" subtitle="You got questions? We got answers." />
       <section className="mx-auto max-w-3xl px-4 py-20">
         <Accordion type="single" collapsible defaultValue="q0" className="w-full">
           {faqs.map((f, i) => (

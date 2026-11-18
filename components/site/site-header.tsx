@@ -18,6 +18,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
+// FAQ lives in the footer only.
+const headerNav = nav.filter((item) => item.href !== "/faq")
+
 export function SiteHeader() {
   const pathname = usePathname()
   const isActive = (href: string) =>
@@ -25,16 +28,13 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4">
+      <div className="mx-auto flex h-20 max-w-6xl items-center gap-6 px-4">
         <Link href="/" className="flex shrink-0 items-center gap-2" aria-label={`${site.name} home`}>
-          <Image src="/images/logo-nav.png" alt="" width={44} height={31} priority />
-          <span className="font-heading text-lg font-bold tracking-wide uppercase">
-            Red <span className="text-brand">Horse</span>
-          </span>
+          <Image src="/images/logo.png" alt="" width={80} height={61} priority className="h-[60px] w-auto" />
         </Link>
 
         <nav aria-label="Main" className="hidden flex-1 items-center justify-center gap-1 lg:flex">
-          {nav.slice(1, -1).map((item) => (
+          {headerNav.slice(1, -1).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -80,7 +80,7 @@ export function SiteHeader() {
                 <SheetTitle className="font-heading uppercase">Menu</SheetTitle>
               </SheetHeader>
               <nav aria-label="Mobile" className="flex flex-col gap-1 px-4">
-                {nav.map((item) => (
+                {headerNav.map((item) => (
                   <SheetClose asChild key={item.href}>
                     <Link
                       href={item.href}

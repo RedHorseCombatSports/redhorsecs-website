@@ -16,7 +16,6 @@ export default function SchedulePage() {
   return (
     <>
       <PageHero
-        eyebrow="Coach’s Corner"
         title="Stay sharp, ready, and in the loop"
         subtitle="Welcome to Coach’s Corner, your home base for everything happening at Red Horse."
       />
