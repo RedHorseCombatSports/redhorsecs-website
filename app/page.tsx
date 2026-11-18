@@ -49,7 +49,7 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-background via-background/80 to-background/20" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-background to-transparent" />
 
-        <div className="mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-[1.2fr_1fr]">
+        <div className="mx-auto grid min-h-[calc(100svh-14rem)] max-w-6xl items-center gap-10 px-4 py-12 sm:py-16 lg:grid-cols-[1.2fr_1fr]">
           <div className="flex flex-col gap-6">
             <h1 className="sr-only">{site.tagline}</h1>
             <div
@@ -112,7 +112,7 @@ export default function HomePage() {
       </div>
 
       {/* ---------- Intro ---------- */}
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 lg:grid-cols-2">
+      <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-14 pb-24 lg:grid-cols-2">
         <div className="flex flex-col gap-6">
           <SectionHeading
             title="Elite training in a supportive, ego-free space"
