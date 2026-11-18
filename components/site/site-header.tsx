@@ -8,6 +8,7 @@ import { MenuIcon } from "lucide-react"
 import { nav, site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import StarBorder from "@/components/react-bits/StarBorder"
 import {
   Sheet,
   SheetClose,
@@ -49,9 +50,24 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <Button asChild size="lg" className="hidden font-heading tracking-wide uppercase sm:inline-flex">
-            <Link href="/hit-us-up">First week free</Link>
-          </Button>
+          {/* React Bits StarBorder draws on a canvas, so it needs literal colors for the stars (brand red from tokens.css); surface, text and border use tokens. */}
+          <StarBorder
+            as={Link}
+            href="/hit-us-up"
+            theme="dark"
+            color="#ed2d2d"
+            trailColor="#ff8a8a"
+            backgroundColor="var(--background)"
+            textColor="var(--foreground)"
+            borderColor="color-mix(in srgb, var(--brand) 40%, transparent)"
+            radius={6}
+            thickness={1.5}
+            duration={4}
+            hover="brighten"
+            className="hidden px-5 py-2.5 font-heading text-sm font-semibold tracking-wide uppercase sm:inline-flex"
+          >
+            First week free
+          </StarBorder>
 
           <Sheet>
             <SheetTrigger asChild>

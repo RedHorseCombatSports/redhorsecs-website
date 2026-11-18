@@ -23,7 +23,7 @@ import {
 import { Marquee } from "@/components/magicui/marquee"
 import { ShimmerButton } from "@/components/magicui/shimmer-button"
 import { BorderBeam } from "@/components/magicui/border-beam"
-import BlurText from "@/components/react-bits/BlurText"
+import RotatingText from "@/components/react-bits/RotatingText"
 import SpotlightCard from "@/components/react-bits/SpotlightCard"
 import { SectionHeading } from "@/components/site/page-hero"
 import { CallToAction } from "@/components/site/call-to-action"
@@ -61,11 +61,22 @@ export default function HomePage() {
               Oklahoma City · Kickboxing
             </p>
             <h1 className="sr-only">{site.tagline}</h1>
-            <BlurText
-              text="Unleash your potential"
-              animateBy="words"
-              className="font-heading text-6xl leading-[0.9] font-extrabold tracking-tight uppercase sm:text-8xl"
-            />
+            <div
+              aria-hidden="true"
+              className="flex flex-col items-start gap-2 font-heading text-6xl leading-[0.9] font-extrabold tracking-tight uppercase sm:text-8xl"
+            >
+              <span>Unleash your</span>
+              <RotatingText
+                texts={["potential", "power", "speed", "strength", "fighter"]}
+                effect="slide"
+                direction="up"
+                rotationInterval={2200}
+                staggerDuration={0.025}
+                staggerFrom="last"
+                mainClassName="overflow-hidden rounded-(--radius-button) bg-primary px-3 pt-1 pb-2 text-primary-foreground sm:px-4"
+                splitLevelClassName="overflow-hidden pb-1"
+              />
+            </div>
             <p className="max-w-xl text-lg text-muted-foreground sm:text-xl">{site.description}</p>
             <div className="flex flex-wrap gap-3">
               <Link href="/hit-us-up">
