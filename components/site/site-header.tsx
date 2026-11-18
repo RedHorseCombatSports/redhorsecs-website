@@ -28,9 +28,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-6xl items-center gap-6 px-4">
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4">
         <Link href="/" className="flex shrink-0 items-center gap-2" aria-label={`${site.name} home`}>
-          <Image src="/images/logo.png" alt="" width={80} height={61} priority className="h-[60px] w-auto" />
+          <Image src="/images/logo-nav.png" alt="" width={57} height={40} priority className="h-10 w-auto" />
         </Link>
 
         <nav aria-label="Main" className="hidden flex-1 items-center justify-center gap-1 lg:flex">
