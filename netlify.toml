@@ -5,6 +5,58 @@
 [build.environment]
   NODE_VERSION = "24"
 
+# Old WordPress URLs -> new pages (301 keeps search rankings).
+[[redirects]]
+  from = "/coachs-corner/*"
+  to = "/schedule/"
+  status = 301
+
+[[redirects]]
+  from = "/hit-us-up/*"
+  to = "/free-class/"
+  status = 301
+
+[[redirects]]
+  from = "/find-us/*"
+  to = "/location/"
+  status = 301
+
+[[redirects]]
+  from = "/event/*"
+  to = "/schedule/"
+  status = 301
+
+[[redirects]]
+  from = "/events/*"
+  to = "/schedule/"
+  status = 301
+
+[[redirects]]
+  from = "/hello-world/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/hello-universe/*"
+  to = "/"
+  status = 301
+
+# Yoast sitemaps -> the new one, so Search Console's saved sitemap keeps working.
+[[redirects]]
+  from = "/sitemap_index.xml"
+  to = "/sitemap.xml"
+  status = 301
+
+[[redirects]]
+  from = "/*-sitemap.xml"
+  to = "/sitemap.xml"
+  status = 301
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/"
+  status = 301
+
 # Staging copy: keep it out of search results until it replaces redhorsecs.com.
 # Remove this block at launch.
 [[headers]]

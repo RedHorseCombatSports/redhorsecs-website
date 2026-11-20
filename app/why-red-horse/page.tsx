@@ -8,9 +8,10 @@ import { CallToAction } from "@/components/site/call-to-action"
 import BlurFadeIn from "@/components/site/fade-in"
 
 export const metadata: Metadata = {
-  title: "Why Red Horse",
+  title: { absolute: "Why Train at Red Horse Combat Sports, Oklahoma City" },
   description:
-    "Why train with Red Horse: Oklahoma’s only kickboxing-focused gym, intimate classes, superior conditioning and world-class coaching. First class free.",
+    "Small classes, a conditioning focus and coaching for every level, from first-timers to fighters. Your first kickboxing class is free.",
+  alternates: { canonical: "/why-red-horse/" },
 }
 
 export default function WhyPage() {
@@ -26,7 +27,7 @@ export default function WhyPage() {
         <BlurFadeIn className="grid items-center gap-12 lg:grid-cols-2">
           <Image
             src="/images/why-3.jpg"
-            alt="Red Horse members training together"
+            alt="Members training together at Red Horse Combat Sports, Oklahoma City"
             width={726}
             height={480}
             className="h-auto w-full rounded-(--radius-card) border"
@@ -59,7 +60,7 @@ export default function WhyPage() {
           </div>
           <Image
             src="/images/why-1.jpg"
-            alt="Members working heavy bags in class"
+            alt="Kickboxing class working heavy bags at Red Horse Combat Sports, Oklahoma City"
             width={726}
             height={480}
             className="h-auto w-full rounded-(--radius-card) border lg:order-2"
@@ -70,7 +71,7 @@ export default function WhyPage() {
         <BlurFadeIn className="grid items-center gap-12 lg:grid-cols-2">
           <Image
             src="/images/why-2.jpg"
-            alt="Coach working with a Red Horse student"
+            alt="Coach working with a student at Red Horse Combat Sports, Oklahoma City"
             width={726}
             height={480}
             className="h-auto w-full rounded-(--radius-card) border"
@@ -86,7 +87,7 @@ export default function WhyPage() {
               ))}
             </div>
             <p className="font-heading text-xl font-semibold uppercase">
-              Your first class is <span className="text-brand">free!</span>
+              Your first class is <span className="text-brand">free</span>
             </p>
           </div>
         </BlurFadeIn>

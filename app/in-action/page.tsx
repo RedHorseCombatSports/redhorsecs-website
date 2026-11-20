@@ -5,8 +5,10 @@ import { CallToAction } from "@/components/site/call-to-action"
 import { Gallery } from "@/components/site/gallery"
 
 export const metadata: Metadata = {
-  title: "In Action",
-  description: "Real fighters. Real moments. Photos from Red Horse training and fights.",
+  title: { absolute: "Photos & Videos | Red Horse Combat Sports, Oklahoma City" },
+  description:
+    "See what training at Red Horse Combat Sports looks like: classes, sparring and fights at our Oklahoma City kickboxing gym.",
+  alternates: { canonical: "/in-action/" },
 }
 
 export default function InActionPage() {

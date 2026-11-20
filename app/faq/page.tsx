@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
-import { faqs } from "@/lib/site"
+import { faqs, site } from "@/lib/site"
 import {
   Accordion,
   AccordionContent,
@@ -12,9 +12,10 @@ import { PageHero } from "@/components/site/page-hero"
 import { CallToAction } from "@/components/site/call-to-action"
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Beginner Kickboxing FAQ",
   description:
-    "Answers about kickboxing at Red Horse: experience, gear, sparring, youth classes, how often to train and pricing.",
+    "No experience needed. What to bring, sparring, youth classes and memberships at Red Horse Combat Sports, Oklahoma City. First class free.",
+  alternates: { canonical: "/faq/" },
 }
 
 const faqSchema = {
@@ -30,7 +31,7 @@ const faqSchema = {
 export default function FaqPage() {
   return (
     <>
-      <PageHero title="Frequently asked questions" subtitle="You got questions? We got answers." />
+      <PageHero title="Kickboxing questions, answered" subtitle="You got questions? We got answers." />
       <section className="mx-auto max-w-3xl px-4 py-20">
         <Accordion type="single" collapsible defaultValue="q0" className="w-full">
           {faqs.map((f, i) => (
@@ -42,10 +43,15 @@ export default function FaqPage() {
         </Accordion>
         <p className="mt-10 text-muted-foreground">
           Still have a question?{" "}
-          <Link href="/hit-us-up" className="font-medium text-brand underline-offset-4 hover:underline">
-            Hit us up
-          </Link>
-          .
+          Call{" "}
+          <a href={site.phoneHref} className="font-medium text-brand underline-offset-4 hover:underline">
+            {site.phone}
+          </a>{" "}
+          or{" "}
+          <Link href="/free-class/" className="font-medium text-brand underline-offset-4 hover:underline">
+            book your free class
+          </Link>{" "}
+          and ask your coach.
         </p>
       </section>
       <CallToAction />

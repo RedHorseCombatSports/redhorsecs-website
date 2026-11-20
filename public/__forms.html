@@ -7,18 +7,17 @@
   </head>
   <body>
     <!--
-      Hidden skeleton so Netlify Forms registers the React contact form at deploy time.
-      Field names must match components/site/contact-form.tsx exactly.
+      Hidden skeleton so Netlify Forms registers the React free-class form at deploy time.
+      Field names must match components/site/free-class-form.tsx exactly.
     -->
-    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="contact" />
+    <form name="free-class" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="free-class" />
       <input type="hidden" name="subject" />
       <input name="bot-field" />
-      <input name="first-name" type="text" />
-      <input name="last-name" type="text" />
-      <input name="email" type="email" />
-      <input name="phone" type="tel" />
-      <textarea name="message"></textarea>
+      <input name="name" type="text" />
+      <input name="contact" type="text" />
+      <select name="class"><option value="">-</option></select>
+      <input name="experience" type="radio" value="" />
     </form>
   </body>
 </html>

@@ -1,20 +1,21 @@
 import type { Metadata } from "next"
-import { MailIcon, MapPinIcon, NavigationIcon, PhoneIcon } from "lucide-react"
+import { ClockIcon, MailIcon, MapPinIcon, NavigationIcon, PhoneIcon } from "lucide-react"
 
-import { site } from "@/lib/site"
+import { cta, site } from "@/lib/site"
 import { Button } from "@/components/ui/button"
 import { PageHero } from "@/components/site/page-hero"
 import { CallToAction } from "@/components/site/call-to-action"
 
 export const metadata: Metadata = {
-  title: "Find Us",
-  description: `Red Horse Combat Training is at ${site.address.full}. Call ${site.phone} or email ${site.email}.`,
+  title: "Location & Hours, Oklahoma City",
+  description: `Red Horse Combat Sports, ${site.address.full}. ${site.phone}. Class times, directions and how to reach us.`,
+  alternates: { canonical: "/location/" },
 }
 
 export default function LocationPage() {
   return (
     <>
-      <PageHero title="Where to find us" subtitle="Have questions or want to stop by?" />
+      <PageHero title="Visit Red Horse Combat Sports" subtitle="Questions, or want to stop by? Here’s where to find us." />
       <section className="mx-auto grid max-w-6xl gap-6 px-4 py-20 lg:grid-cols-[1fr_1.6fr]">
         <div className="flex flex-col gap-6 rounded-(--radius-card) border bg-card p-8 shadow-(--shadow-card)">
           <h2 className="text-3xl font-bold">{site.name}</h2>
@@ -32,6 +33,10 @@ export default function LocationPage() {
                 <PhoneIcon className="size-5 text-brand" aria-hidden="true" /> {site.phone}
               </a>
             </li>
+            <li className="flex gap-3">
+              <ClockIcon className="mt-1 size-5 shrink-0 text-brand" aria-hidden="true" />
+              <span>Classes {site.hours}</span>
+            </li>
             <li>
               <a href={`mailto:${site.email}`} className="flex items-center gap-3 break-all hover:text-brand">
                 <MailIcon className="size-5 shrink-0 text-brand" aria-hidden="true" /> {site.email}
@@ -40,7 +45,7 @@ export default function LocationPage() {
           </ul>
           <Button asChild size="lg" className="mt-auto font-heading tracking-wide uppercase">
             <a href={site.mapsLink} target="_blank" rel="noreferrer">
-              <NavigationIcon /> Get directions
+              <NavigationIcon /> {cta.directions}
             </a>
           </Button>
         </div>

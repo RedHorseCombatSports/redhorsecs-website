@@ -17,22 +17,32 @@ const fontHeading = Roboto_Condensed({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Kickboxing Gym in Oklahoma City`,
+    default: `Kickboxing Gym in Oklahoma City | ${site.name}`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  openGraph: { siteName: site.name, locale: "en_US", type: "website" },
   // Staging copy: keep out of search results until it replaces redhorsecs.com.
   robots: { index: false, follow: false },
 }
 
+// LocalBusiness schema from the copy spec. Opening hours are left out until they match
+// the Google Business Profile exactly; no review rating, by design.
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "SportsActivityLocation",
   name: site.name,
-  description: site.description,
+  legalName: site.legalName,
+  alternateName: "Red Horse Kickboxing",
+  description:
+    "Kickboxing gym in Oklahoma City with beginner-friendly group classes, private training and youth programs. Your first class is free.",
+  url: `${site.url}/`,
+  telephone: "+1-405-361-5815",
   email: site.email,
-  telephone: site.phone,
+  image: `${site.url}/images/logo.png`,
+  priceRange: "$20–$125",
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -41,7 +51,8 @@ const localBusiness = {
     postalCode: site.address.postal,
     addressCountry: "US",
   },
-  sameAs: [site.facebook],
+  geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
+  sameAs: [site.facebook, site.instagram],
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
