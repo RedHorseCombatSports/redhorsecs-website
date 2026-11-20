@@ -11,7 +11,7 @@ import { ScheduleTable } from "@/components/site/schedule-table"
 export const metadata: Metadata = {
   title: "Kickboxing Class Schedule, OKC",
   description:
-    "Weekly kickboxing class times at Red Horse Combat Sports in Oklahoma City: Monday to Thursday 4–6 PM, Saturday 10–11 AM. First class free.",
+    "Weekly kickboxing classes at Red Horse Combat Sports in Oklahoma City: youth, beginner, advanced, conditioning and open training. First class free.",
   alternates: { canonical: "/schedule/" },
 }
 
@@ -20,7 +20,7 @@ export default function SchedulePage() {
     <>
       <PageHero
         title="Kickboxing class schedule"
-        subtitle="Classes run Monday to Thursday 4–6 PM and Saturday 10–11 AM. We recommend 2–3 classes a week to start."
+        subtitle="Youth, beginner, advanced and conditioning classes Monday to Friday, plus open training on Saturday. We recommend 2–3 classes a week to start."
       />
 
       <section className="mx-auto grid max-w-6xl gap-6 px-4 py-24 lg:grid-cols-[1.5fr_1fr]">
@@ -29,7 +29,7 @@ export default function SchedulePage() {
             <CalendarDaysIcon className="size-8 text-brand" aria-hidden="true" />
             <h2 className="text-3xl font-bold">Weekly classes</h2>
           </div>
-          <ScheduleTable caption="Weekly kickboxing class times at Red Horse Combat Sports" />
+          <ScheduleTable />
         </div>
 
         <div className="flex flex-col gap-4 rounded-(--radius-card) border bg-card p-6 shadow-(--shadow-card) sm:p-8 lg:self-start">

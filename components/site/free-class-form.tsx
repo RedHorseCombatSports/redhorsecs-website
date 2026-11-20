@@ -4,16 +4,18 @@ import * as React from "react"
 import { useRouter } from "next/navigation"
 import { LoaderIcon } from "lucide-react"
 
-import { cta, schedule, site } from "@/lib/site"
+import { classes, cta, site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 /** Class choices built from the schedule, plus "not sure". */
+const dayRange = (days: string[]) =>
+  days.length > 1 ? `${days[0].slice(0, 3)}–${days[days.length - 1].slice(0, 3)}` : days[0]
 const classOptions = [
-  ...schedule.filter((s) => s.time).map((s) => `${s.day} ${s.time}`),
-  "Not sure yet",
+  ...classes.map((c) => ({ value: c.name, label: `${c.name} (${dayRange(c.days)} ${c.time})` })),
+  { value: "Not sure yet", label: "Not sure yet" },
 ]
 const experienceOptions = ["Never", "A little", "Yes, regularly"]
 
@@ -53,8 +55,8 @@ export function FreeClassForm() {
       })
       if (!res.ok) throw new Error(String(res.status))
       const picked = String(data.get("class"))
-      const day = picked === "Not sure yet" ? "" : picked.split(" ")[0]
-      router.push(`/free-class/thanks/${day ? `?day=${encodeURIComponent(day)}` : ""}`)
+      const query = picked === "Not sure yet" ? "" : `?class=${encodeURIComponent(picked)}`
+      router.push(`/free-class/thanks/${query}`)
     } catch {
       setStatus("error")
     }
@@ -134,8 +136,8 @@ export function FreeClassForm() {
             Pick a class
           </option>
           {classOptions.map((o) => (
-            <option key={o} value={o}>
-              {o}
+            <option key={o.value} value={o.value}>
+              {o.label}
             </option>
           ))}
         </select>

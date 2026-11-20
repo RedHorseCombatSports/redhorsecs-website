@@ -23,7 +23,7 @@ export const site = {
   phone: "(405) 361-5815",
   phoneHref: "tel:+14053615815",
   /** Class times, short form for headers, footers and info lines. */
-  hours: "Mon–Thu 4–6 PM · Sat 10–11 AM",
+  hours: "Mon–Fri 3–7 PM · Sat 10–11 AM",
   facebook: "https://www.facebook.com/profile.php?id=100067196684265",
   instagram: "https://www.instagram.com/red.horsecs/",
   reviews: "https://www.google.com/maps/search/?api=1&query=Red+Horse+Combat+Sports+3718+NW+50th+St+Oklahoma+City",
@@ -130,15 +130,57 @@ export const gallery = [
   36, 37, 29, 20, 26, 27, 25, 11, 28, 24, 23, 19, 10, 53, 15, 16, 51, 17, 52, 18, 14, 41,
 ].map((n) => ({ src: `/images/gallery/${n}.jpg`, alt: `Kickboxing training at Red Horse Combat Sports, Oklahoma City (photo ${n})` }))
 
-/** Weekly class times shown on /schedule and the homepage. `time: null` = no class that day. */
-export const schedule: { day: string; time: string | null }[] = [
-  { day: "Monday", time: "4–6 PM" },
-  { day: "Tuesday", time: "4–6 PM" },
-  { day: "Wednesday", time: "4–6 PM" },
-  { day: "Thursday", time: "4–6 PM" },
-  { day: "Friday", time: null },
-  { day: "Saturday", time: "10–11 AM" },
-  { day: "Sunday", time: null },
+const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+/** Weekly classes, one tab each on /schedule. Order here is the tab order. */
+export const classes: {
+  id: string
+  name: string
+  level: string
+  description: string
+  days: string[]
+  time: string
+}[] = [
+  {
+    id: "youth",
+    name: "Youth",
+    level: "Kids and teens",
+    description: "Discipline, fitness and self-defense for kids and teens, in a fun, safe setting.",
+    days: weekdays,
+    time: "3–4 PM",
+  },
+  {
+    id: "beginner",
+    name: "Beginner",
+    level: "New to kickboxing",
+    description: "Every move taught from the ground up. The best place to start.",
+    days: weekdays,
+    time: "6–7 PM",
+  },
+  {
+    id: "advanced",
+    name: "Advanced",
+    level: "Experienced",
+    description: "A faster pace for members with experience.",
+    days: weekdays,
+    time: "5–6 PM",
+  },
+  {
+    id: "conditioning",
+    name: "Conditioning",
+    level: "Everyone",
+    description: "A hard, fun hour of conditioning for every level.",
+    days: weekdays,
+    time: "4–5 PM",
+  },
+  {
+    id: "open-training",
+    name: "Open training",
+    level: "Everyone",
+    description: "Saturday training, open to every level.",
+    days: ["Saturday"],
+    time: "10–11 AM",
+  },
 ]
 
 /** Who it's for (homepage cards). */

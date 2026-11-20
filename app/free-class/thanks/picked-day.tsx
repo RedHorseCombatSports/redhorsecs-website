@@ -2,10 +2,10 @@
 
 import { useSearchParams } from "next/navigation"
 
-const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+import { classes } from "@/lib/site"
 
-/** "See you on Monday." from ?day=, or a generic line if no day was picked. */
+/** "See you at Beginner class." from ?class=, or a generic line if none was picked. */
 export function PickedDay() {
-  const day = useSearchParams().get("day")
-  return <>{day && days.includes(day) ? `See you on ${day}.` : "See you soon."}</>
+  const picked = classes.find((c) => c.name === useSearchParams().get("class"))
+  return <>{picked ? `See you at ${picked.name} class.` : "See you soon."}</>
 }
