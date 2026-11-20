@@ -1,5 +1,7 @@
 import React, { type ComponentPropsWithoutRef, type CSSProperties } from "react"
 
+import Link from "next/link"
+
 import { cn } from "@/lib/utils"
 
 export interface ShimmerButtonProps extends ComponentPropsWithoutRef<"button"> {
@@ -10,6 +12,8 @@ export interface ShimmerButtonProps extends ComponentPropsWithoutRef<"button"> {
   background?: string
   className?: string
   children?: React.ReactNode
+  /** Red Horse addition: render as a Next.js link (no <button> nested in <a>). */
+  href?: string
 }
 
 export const ShimmerButton = React.forwardRef<
@@ -25,12 +29,16 @@ export const ShimmerButton = React.forwardRef<
       background = "rgba(0, 0, 0, 1)",
       className,
       children,
+      href,
       ...props
     },
     ref
   ) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const Comp: any = href ? Link : "button"
     return (
-      <button
+      <Comp
+        href={href}
         style={
           {
             "--spread": "90deg",
@@ -88,7 +96,7 @@ export const ShimmerButton = React.forwardRef<
             "absolute inset-(--cut) -z-20 [border-radius:var(--radius)] [background:var(--bg)]"
           )}
         />
-      </button>
+      </Comp>
     )
   }
 )

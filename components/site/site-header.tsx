@@ -8,6 +8,7 @@ import { MenuIcon, PhoneIcon } from "lucide-react"
 import { cta, footerNav, nav, site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { ShimmerButton } from "@/components/magicui/shimmer-button"
 import {
   Sheet,
   SheetClose,
@@ -54,19 +55,16 @@ export function SiteHeader() {
           </nav>
 
           <div className="ml-auto flex items-center gap-2 lg:ml-0">
-            <a
-              href={site.phoneHref}
-              className="hidden items-center gap-2 px-2 text-sm font-medium text-muted-foreground hover:text-foreground md:inline-flex"
+            {/* Magic UI ShimmerButton, rendered as a link. Shimmer color is brand red's light tint. */}
+            <ShimmerButton
+              href="/free-class/"
+              background="var(--primary)"
+              shimmerColor="#ffffff"
+              borderRadius="var(--radius-button)"
+              className="hidden h-10 px-5 font-heading text-[13px] font-bold tracking-[0.04em] uppercase sm:flex"
             >
-              <PhoneIcon className="size-4 text-brand" aria-hidden="true" /> {site.phone}
-            </a>
-            <Button
-              asChild
-              variant="outline"
-              className="hidden h-10 border-primary bg-background px-5 font-heading text-[13px] font-bold tracking-[0.04em] uppercase hover:bg-secondary sm:inline-flex"
-            >
-              <Link href="/free-class/">{cta.nav}</Link>
-            </Button>
+              {cta.nav}
+            </ShimmerButton>
 
             <Sheet>
               <SheetTrigger asChild>
