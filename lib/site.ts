@@ -47,6 +47,7 @@ export const cta = {
 export const pricing = {
   dropIn: 20,
   monthly: 125,
+  kidsMonthly: 50,
 }
 
 /** Header nav (labels 10 chars max). The "Free class" button sits beside it. */
@@ -121,7 +122,7 @@ export const faqs = [
   },
   {
     q: "How much does kickboxing cost at Red Horse?",
-    a: `Your first class is free. After that, drop in for $${pricing.dropIn} a class or join for $${pricing.monthly} a month.`,
+    a: `Your first class is free. After that, drop in for $${pricing.dropIn} a class or join for $${pricing.monthly} a month. Kids memberships are $${pricing.kidsMonthly} a month.`,
   },
 ]
 

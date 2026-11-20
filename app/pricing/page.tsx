@@ -10,7 +10,7 @@ import { CallToAction } from "@/components/site/call-to-action"
 
 export const metadata: Metadata = {
   title: "Kickboxing Membership Prices",
-  description: `Kickboxing at Red Horse Combat Sports in Oklahoma City: $${pricing.monthly} a month or $${pricing.dropIn} a class, plus private training. First class free.`,
+  description: `Kickboxing at Red Horse Combat Sports in Oklahoma City: $${pricing.monthly} a month, kids $${pricing.kidsMonthly} a month, or $${pricing.dropIn} a class. First class free.`,
   alternates: { canonical: "/pricing/" },
 }
 
@@ -34,6 +34,15 @@ const plans = [
     featured: true,
   },
   {
+    name: "Kids membership",
+    price: `$${pricing.kidsMonthly}`,
+    unit: "/ month",
+    points: ["For kids and teens", "Youth class Mon–Fri 3–4 PM", "Billed monthly"],
+    href: "/free-class/",
+    label: "Start with a free class",
+    featured: false,
+  },
+  {
     name: "Drop-in",
     price: `$${pricing.dropIn}`,
     unit: "/ class",
@@ -50,22 +59,22 @@ export default function PricingPage() {
     <>
       <PageHero
         title="Memberships and pricing"
-        subtitle={`Your first class is free. After that, drop in for $${pricing.dropIn} a class or join for $${pricing.monthly} a month.`}
+        subtitle={`Your first class is free. After that, drop in for $${pricing.dropIn} a class or join for $${pricing.monthly} a month. Kids train for $${pricing.kidsMonthly} a month.`}
       />
       <section className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((p) => (
             <div
               key={p.name}
               className={cn(
-                "flex flex-col gap-6 rounded-(--radius-card) border bg-card p-8",
+                "flex flex-col gap-6 rounded-(--radius-card) border bg-card p-7",
                 p.featured && "border-2 border-primary"
               )}
             >
               <div className="flex flex-col gap-2">
                 <h2 className="font-heading text-xl font-semibold tracking-wide uppercase">{p.name}</h2>
                 <p className="flex items-baseline gap-2">
-                  <span className="font-heading text-6xl font-extrabold">{p.price}</span>
+                  <span className="font-heading text-5xl font-extrabold">{p.price}</span>
                   {p.unit && <span className="text-muted-foreground">{p.unit}</span>}
                 </p>
               </div>
