@@ -35,7 +35,9 @@ export function SiteHeader() {
       <header className="sticky top-0 z-50 border-b bg-surface">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4">
           <Link href="/" className="flex shrink-0 items-center gap-2" aria-label={`${site.name} home`}>
-            <Image src="/images/logo-nav.png" alt="Red Horse Combat Sports logo" width={57} height={40} priority className="h-10 w-auto" />
+            {/* Phones: the full red Red Horse Combat Sports lockup. Tablet and up: the horse head. */}
+            <Image src="/images/logo-combat-sports-red.svg" alt="" width={75} height={52} priority className="h-13 w-auto md:hidden" />
+            <Image src="/images/logo-nav.png" alt="" width={57} height={40} priority className="hidden h-10 w-auto md:block" />
           </Link>
 
           <nav aria-label="Main" className="hidden flex-1 items-center justify-center gap-1 lg:flex">
