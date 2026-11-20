@@ -1,6 +1,5 @@
-import Image from "next/image"
-
 import { cn } from "@/lib/utils"
+import { HeroBg } from "@/components/site/hero-bg"
 
 /** Title band at the top of every inner page: lightning photo under a left-to-right dark fade. */
 export function PageHero({
@@ -14,13 +13,7 @@ export function PageHero({
 }) {
   return (
     <section className={cn("relative isolate overflow-hidden border-b", className)}>
-      <Image
-        src="/images/hero-bg.jpg"
-        alt=""
-        fill
-        priority
-        className="-z-20 object-cover object-right"
-      />
+      <HeroBg priority className="object-right" />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-linear-to-r from-background/95 via-background/75 to-background/45"

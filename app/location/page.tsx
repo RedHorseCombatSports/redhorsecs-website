@@ -29,7 +29,7 @@ export default function LocationPage() {
               </span>
             </li>
             <li>
-              <a href={site.phoneHref} className="flex items-center gap-3 hover:text-brand">
+              <a href={site.phoneHref} className="flex min-h-11 items-center gap-3 hover:text-brand">
                 <PhoneIcon className="size-5 text-brand" aria-hidden="true" /> {site.phone}
               </a>
             </li>
@@ -38,7 +38,7 @@ export default function LocationPage() {
               <span>Classes {site.hours}</span>
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="flex items-center gap-3 break-all hover:text-brand">
+              <a href={`mailto:${site.email}`} className="flex min-h-11 items-center gap-3 break-all hover:text-brand">
                 <MailIcon className="size-5 shrink-0 text-brand" aria-hidden="true" /> {site.email}
               </a>
             </li>

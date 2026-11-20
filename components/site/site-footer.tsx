@@ -35,16 +35,16 @@ export function SiteFooter() {
           <p className="max-w-xs text-sm text-muted-foreground">
             {site.descriptor}. Your first class is on us.
           </p>
-          <Button asChild size="sm" className="w-fit font-heading text-[13px] font-bold tracking-[0.04em] uppercase">
+          <Button asChild size="sm" className="h-11 w-fit px-4 sm:h-9 font-heading text-[13px] font-bold tracking-[0.04em] uppercase">
             <Link href="/free-class/">{cta.primary}</Link>
           </Button>
-          <div className="flex gap-3">
+          <div className="-ml-2.5 flex gap-1">
             <a
               href={site.instagram}
               target="_blank"
               rel="noreferrer"
               aria-label="Red Horse Combat Sports on Instagram"
-              className="text-muted-foreground hover:text-foreground"
+              className="flex size-11 items-center justify-center text-muted-foreground hover:text-foreground"
             >
               <InstagramIcon className="size-6" />
             </a>
@@ -53,7 +53,7 @@ export function SiteFooter() {
               target="_blank"
               rel="noreferrer"
               aria-label="Red Horse Combat Sports on Facebook"
-              className="text-muted-foreground hover:text-foreground"
+              className="flex size-11 items-center justify-center text-muted-foreground hover:text-foreground"
             >
               <FacebookIcon className="size-6" />
             </a>
@@ -61,18 +61,18 @@ export function SiteFooter() {
         </div>
 
         <nav aria-label="Footer" className="flex flex-col gap-2">
-          <h2 className="mb-1 font-heading text-sm font-semibold tracking-wider text-brand uppercase">Explore</h2>
+          <h2 className="mb-1 font-heading text-sm font-semibold tracking-wider text-brand-foreground uppercase">Explore</h2>
           {footerNav.map((item) => (
-            <Link key={item.href} href={item.href} className="w-fit text-sm text-muted-foreground hover:text-foreground">
+            <Link key={item.href} href={item.href} className="w-fit py-1.5 text-sm text-muted-foreground hover:text-foreground">
               {item.label}
             </Link>
           ))}
         </nav>
 
         <address className="flex flex-col gap-3 text-sm not-italic">
-          <h2 className="mb-1 font-heading text-sm font-semibold tracking-wider text-brand uppercase">Visit</h2>
+          <h2 className="mb-1 font-heading text-sm font-semibold tracking-wider text-brand-foreground uppercase">Visit</h2>
           <p className="font-semibold">{site.name}</p>
-          <a href={site.mapsLink} target="_blank" rel="noreferrer" className="flex gap-2 text-muted-foreground hover:text-foreground">
+          <a href={site.mapsLink} target="_blank" rel="noreferrer" className="flex gap-2 py-1 text-muted-foreground hover:text-foreground">
             <MapPinIcon className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
             <span>
               {site.address.street}
@@ -80,10 +80,10 @@ export function SiteFooter() {
               {site.address.city}, {site.address.region} {site.address.postal}
             </span>
           </a>
-          <a href={site.phoneHref} className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
+          <a href={site.phoneHref} className="flex items-center gap-2 py-2 text-muted-foreground hover:text-foreground">
             <PhoneIcon className="size-4" aria-hidden="true" /> {site.phone}
           </a>
-          <a href={`mailto:${site.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
+          <a href={`mailto:${site.email}`} className="flex items-center gap-2 py-2 text-muted-foreground hover:text-foreground">
             <MailIcon className="size-4" aria-hidden="true" /> {site.email}
           </a>
           <p className="flex gap-2 text-muted-foreground">

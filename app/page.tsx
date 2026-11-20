@@ -19,6 +19,7 @@ import { Marquee } from "@/components/magicui/marquee"
 import RotatingText from "@/components/react-bits/RotatingText"
 import { SectionHeading } from "@/components/site/page-hero"
 import { CallToAction } from "@/components/site/call-to-action"
+import { HeroBg } from "@/components/site/hero-bg"
 
 export const metadata: Metadata = {
   title: { absolute: "Kickboxing Gym in Oklahoma City | Red Horse Combat Sports" },
@@ -46,20 +47,20 @@ export default function HomePage() {
     <>
       {/* ---------- Hero ---------- */}
       <section className="relative isolate overflow-hidden">
-        <Image src="/images/hero-bg.jpg" alt="" fill priority className="-z-20 object-cover object-center" />
+        <HeroBg priority className="object-center" />
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 bg-linear-to-r from-background/92 via-background/55 to-background/25"
         />
 
         <div className="mx-auto flex min-h-[calc(100svh-14rem)] max-w-6xl flex-wrap items-center justify-between gap-12 px-4 py-16 sm:py-24">
-          <div className="flex max-w-xl flex-[1_1_420px] flex-col gap-6">
+          <div className="flex min-w-0 max-w-xl flex-[1_1_420px] flex-col gap-6">
             <h1 className="sr-only">Unleash your potential: kickboxing in Oklahoma City. Your first class is free.</h1>
             <div
               aria-hidden="true"
-              className="flex flex-col items-start font-heading text-6xl leading-[1.02] font-bold tracking-[0.01em] uppercase sm:text-[80px]"
+              className="flex flex-col items-start font-heading text-5xl leading-[1.02] font-bold tracking-[0.01em] uppercase min-[400px]:text-[56px] sm:text-[80px]"
             >
-              <span className="whitespace-nowrap">Unleash your</span>
+              <span>Unleash your</span>
               <RotatingText
                 texts={["potential", "power", "speed", "strength", "fighter"]}
                 effect="slide"
@@ -128,7 +129,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/why-red-horse/"
-              className="inline-flex w-fit items-center gap-1.5 font-heading text-sm font-bold tracking-[0.04em] text-brand uppercase hover:text-destructive"
+              className="inline-flex min-h-11 w-fit items-center gap-1.5 font-heading text-sm font-bold tracking-[0.04em] text-brand uppercase hover:text-destructive"
             >
               Why train with Red Horse <ArrowRightIcon className="size-3.5" />
             </Link>
@@ -199,7 +200,7 @@ export default function HomePage() {
             asChild
             variant="outline"
             size="sm"
-            className="h-9 border-border bg-card font-heading text-[13px] font-bold tracking-[0.04em] uppercase hover:bg-secondary"
+            className="h-11 border-border bg-card px-4 font-heading text-[13px] font-bold tracking-[0.04em] uppercase hover:bg-secondary"
           >
             <Link href="/in-action/">
               See the gallery <ArrowRightIcon />

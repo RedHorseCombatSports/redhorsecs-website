@@ -68,7 +68,7 @@ export function SiteHeader() {
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon-lg" className="lg:hidden" aria-label="Open menu">
+                <Button variant="ghost" size="icon-lg" className="size-11 lg:hidden" aria-label="Open menu">
                   <MenuIcon />
                 </Button>
               </SheetTrigger>
@@ -93,8 +93,8 @@ export function SiteHeader() {
                   ))}
                 </nav>
                 <div className="mt-auto flex flex-col gap-2 p-4 text-sm text-muted-foreground">
-                  <a href={site.phoneHref} className="hover:text-foreground">{site.phone}</a>
-                  <a href={`mailto:${site.email}`} className="hover:text-foreground">{site.email}</a>
+                  <a href={site.phoneHref} className="py-2 hover:text-foreground">{site.phone}</a>
+                  <a href={`mailto:${site.email}`} className="py-2 hover:text-foreground">{site.email}</a>
                 </div>
               </SheetContent>
             </Sheet>

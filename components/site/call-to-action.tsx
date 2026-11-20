@@ -1,14 +1,14 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { cta, site } from "@/lib/site"
 import { Button } from "@/components/ui/button"
+import { HeroBg } from "@/components/site/hero-bg"
 
 /** Page-end band, shared by every page except the free-class flow. */
 export function CallToAction() {
   return (
     <section className="relative isolate overflow-hidden border-t">
-      <Image src="/images/hero-bg.jpg" alt="" fill className="-z-20 object-cover" />
+      <HeroBg />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-background/82" />
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-5 px-4 py-24 text-center">
         <h2 className="text-5xl leading-none font-bold tracking-[0.02em] sm:text-[64px]">
