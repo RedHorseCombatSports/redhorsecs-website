@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { CheckIcon } from "lucide-react"
 
-import { cta, pricing, site } from "@/lib/site"
+import { pricing, site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { PageHero } from "@/components/site/page-hero"
@@ -21,7 +21,7 @@ const plans = [
     unit: "",
     points: ["No experience needed", "Loaner gloves and shinguards", "No commitment"],
     href: "/free-class/",
-    label: cta.primary,
+    label: "Claim your free class",
     featured: false,
   },
   {
@@ -58,8 +58,8 @@ export default function PricingPage() {
             <div
               key={p.name}
               className={cn(
-                "flex flex-col gap-6 rounded-(--radius-card) border bg-card p-8 shadow-(--shadow-card)",
-                p.featured && "border-brand ring-1 ring-brand"
+                "flex flex-col gap-6 rounded-(--radius-card) border bg-card p-8",
+                p.featured && "border-2 border-primary"
               )}
             >
               <div className="flex flex-col gap-2">

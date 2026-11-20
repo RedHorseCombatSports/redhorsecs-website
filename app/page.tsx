@@ -3,11 +3,11 @@ import Image from "next/image"
 import Link from "next/link"
 import {
   ArrowRightIcon,
-  DumbbellIcon,
   FlameIcon,
   MapPinIcon,
   MedalIcon,
   ShieldIcon,
+  SwordsIcon,
   TrophyIcon,
   UsersIcon,
   ZapIcon,
@@ -16,10 +16,7 @@ import {
 import { cta, difference, gallery, offerings, site } from "@/lib/site"
 import { Button } from "@/components/ui/button"
 import { Marquee } from "@/components/magicui/marquee"
-import { ShimmerButton } from "@/components/magicui/shimmer-button"
-import { BorderBeam } from "@/components/magicui/border-beam"
 import RotatingText from "@/components/react-bits/RotatingText"
-import SpotlightCard from "@/components/react-bits/SpotlightCard"
 import { SectionHeading } from "@/components/site/page-hero"
 import { CallToAction } from "@/components/site/call-to-action"
 
@@ -30,7 +27,7 @@ export const metadata: Metadata = {
 }
 
 const differenceIcons = [MedalIcon, UsersIcon, FlameIcon, TrophyIcon]
-const offeringIcons = [UsersIcon, DumbbellIcon, ZapIcon, ShieldIcon]
+const offeringIcons = [UsersIcon, SwordsIcon, ZapIcon, ShieldIcon]
 
 const ticker = [
   "Kickboxing in Oklahoma City",
@@ -42,29 +39,27 @@ const ticker = [
   "Intimate class sizes",
 ]
 
+const buttonText = "font-heading text-[15px] font-bold tracking-[0.04em] uppercase"
+
 export default function HomePage() {
   return (
     <>
       {/* ---------- Hero ---------- */}
       <section className="relative isolate overflow-hidden">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt=""
-          fill
-          priority
-          className="-z-20 object-cover object-right opacity-90"
+        <Image src="/images/hero-bg.jpg" alt="" fill priority className="-z-20 object-cover object-center" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-linear-to-r from-background/92 via-background/55 to-background/25"
         />
-        <div className="absolute inset-0 -z-10 bg-linear-to-r from-background via-background/80 to-background/20" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-background to-transparent" />
 
-        <div className="mx-auto grid min-h-[calc(100svh-14rem)] max-w-6xl items-center gap-10 px-4 py-12 sm:py-16 lg:grid-cols-[1.2fr_1fr]">
-          <div className="flex flex-col gap-6">
+        <div className="mx-auto flex min-h-[calc(100svh-14rem)] max-w-6xl flex-wrap items-center justify-between gap-12 px-4 py-16 sm:py-24">
+          <div className="flex max-w-xl flex-[1_1_420px] flex-col gap-6">
             <h1 className="sr-only">Unleash your potential: kickboxing in Oklahoma City. Your first class is free.</h1>
             <div
               aria-hidden="true"
-              className="flex flex-col items-start gap-2 font-heading text-6xl leading-[0.9] font-extrabold tracking-tight uppercase sm:text-8xl"
+              className="flex flex-col items-start font-heading text-6xl leading-[1.02] font-bold tracking-[0.01em] uppercase sm:text-[80px]"
             >
-              <span>Unleash your</span>
+              <span className="whitespace-nowrap">Unleash your</span>
               <RotatingText
                 texts={["potential", "power", "speed", "strength", "fighter"]}
                 effect="slide"
@@ -72,158 +67,159 @@ export default function HomePage() {
                 rotationInterval={2200}
                 staggerDuration={0.025}
                 staggerFrom="last"
-                mainClassName="overflow-hidden rounded-(--radius-button) bg-primary px-3 pt-1 pb-2 text-primary-foreground sm:px-4"
+                mainClassName="mt-2 overflow-hidden bg-primary px-3.5 text-primary-foreground"
                 splitLevelClassName="overflow-hidden pb-1"
               />
             </div>
-            <p className="max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Kickboxing in Oklahoma City. Beginner-friendly classes and real coaching. No experience needed.{" "}
-              <span className="font-semibold text-foreground">Your first class is free.</span>
+            <p className="text-lg text-muted-foreground sm:text-xl">
+              Combat sports and kickboxing in Oklahoma City. Beginner-friendly classes. No experience needed.{" "}
+              <strong className="font-semibold text-foreground">Your first class is free.</strong>
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/free-class/">
-                <ShimmerButton
-                  background="var(--primary)"
-                  shimmerColor="#ffffff"
-                  borderRadius="var(--radius-button)"
-                  className="h-12 px-7 font-heading text-base font-semibold tracking-wide uppercase"
-                >
-                  {cta.primary}
-                </ShimmerButton>
-              </Link>
-              <Button asChild variant="outline" size="lg" className="h-12 px-6 font-heading text-base tracking-wide uppercase">
+              <Button asChild size="lg" className={`h-12 px-6 ${buttonText}`}>
+                <Link href="/free-class/">{cta.hero}</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className={`h-12 border-border bg-card px-5 hover:bg-secondary ${buttonText}`}
+              >
                 <Link href="/location/">
                   <MapPinIcon /> Find the gym
                 </Link>
               </Button>
             </div>
           </div>
-          <div className="hidden justify-center lg:flex">
-            <Image
-              src="/images/logo-mark.png"
-              alt="Red Horse Combat Sports logo"
-              width={570}
-              height={338}
-              priority
-              className="h-auto w-full max-w-md drop-shadow-[0_0_40px_rgb(237_45_45/0.35)]"
-            />
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="Red Horse Kickboxing logo"
+            width={460}
+            height={352}
+            priority
+            className="hidden h-auto w-full max-w-[460px] flex-[0_1_460px] lg:block"
+          />
         </div>
       </section>
 
       {/* ---------- Ticker ---------- */}
-      <div className="border-y bg-primary text-primary-foreground">
-        <Marquee className="py-3 [--duration:35s] [--gap:2.5rem]">
+      <div className="bg-primary text-primary-foreground">
+        <Marquee className="py-4 [--duration:40s] [--gap:2.25rem]">
           {ticker.map((t) => (
-            <span key={t} className="flex items-center gap-10 font-heading text-lg font-semibold tracking-wider uppercase">
+            <span
+              key={t}
+              className="flex items-center gap-9 font-heading text-base font-bold tracking-[0.06em] whitespace-nowrap uppercase"
+            >
               {t} <span aria-hidden="true">✦</span>
             </span>
           ))}
         </Marquee>
       </div>
 
-      {/* ---------- Intro ---------- */}
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-14 pb-24 lg:grid-cols-2">
-        <div className="flex flex-col gap-6">
-          <SectionHeading
-            title="Never thrown a punch? Perfect."
-            description="Most of our members walked in as beginners. Our coaches teach you every move from the ground up, and sparring stays low-speed so you learn technique without getting rattled. Bring water and workout clothes. If you don’t have gloves or shinguards yet, borrow ours."
-          />
-          <Button asChild variant="link" className="w-fit px-0 font-heading text-base tracking-wide text-brand uppercase">
-            <Link href="/why-red-horse/">
-              Why train with Red Horse <ArrowRightIcon />
+      {/* ---------- Beginners ---------- */}
+      <section className="border-b">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-14 px-4 py-24">
+          <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-5">
+            <h2 className="text-4xl leading-none font-bold sm:text-5xl">Never thrown a punch? Perfect.</h2>
+            <p className="text-lg text-muted-foreground">
+              Most of our members walked in as beginners. Our coaches teach you every move from the ground up, and
+              sparring stays low-speed so you learn technique without getting rattled. Bring water and workout clothes. If
+              you don’t have gloves or shinguards yet, borrow ours.
+            </p>
+            <Link
+              href="/why-red-horse/"
+              className="inline-flex w-fit items-center gap-1.5 font-heading text-sm font-bold tracking-[0.04em] text-brand uppercase hover:text-destructive"
+            >
+              Why train with Red Horse <ArrowRightIcon className="size-3.5" />
             </Link>
-          </Button>
-        </div>
-        <div className="relative overflow-hidden rounded-(--radius-card) border">
+          </div>
           <Image
             src="/images/why-1.jpg"
             alt="Beginner kickboxing class working heavy bags at Red Horse Combat Sports, Oklahoma City"
             width={726}
             height={480}
-            className="h-auto w-full"
+            className="h-auto w-full min-w-0 flex-[1_1_420px] rounded-(--radius-card) border object-cover"
           />
-          <BorderBeam size={180} duration={10} colorFrom="#ed2d2d" colorTo="#ff8a8a" />
         </div>
       </section>
 
-      {/* ---------- The Red Horse difference ---------- */}
-      <section className="border-y bg-card/40">
-        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-24">
-          <SectionHeading title="Built for real progress" align="center" />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {/* ---------- Built for real progress ---------- */}
+      <section className="border-b bg-surface">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-24">
+          <h2 className="text-center text-4xl leading-none font-bold sm:text-5xl">Built for real progress</h2>
+          <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {difference.map((d, i) => {
               const Icon = differenceIcons[i]
               return (
-                <SpotlightCard
-                  key={d.title}
-                  spotlightColor="rgba(237, 45, 45, 0.25)"
-                  className="flex flex-col gap-3 rounded-(--radius-card) border bg-card p-6"
-                >
-                  <Icon className="size-8 text-brand" aria-hidden="true" />
-                  <h3 className="text-2xl font-bold">{d.title}</h3>
+                <div key={d.title} className="flex min-h-40 flex-col gap-3 rounded-(--radius-card) border bg-card p-8">
+                  <Icon className="size-6 text-brand" aria-hidden="true" />
+                  <h3 className="text-2xl leading-8 font-bold">{d.title}</h3>
                   <p className="text-sm text-muted-foreground">{d.description}</p>
-                </SpotlightCard>
+                </div>
               )
             })}
           </div>
-          <p className="text-center font-heading text-2xl font-semibold tracking-wide uppercase">
-            Your first class is <span className="text-brand">free</span>
+          <p className="font-heading text-[22px] font-bold tracking-[0.03em] uppercase">
+            Your first class is <span className="text-brand">on us</span>
           </p>
         </div>
       </section>
 
-      {/* ---------- What we offer ---------- */}
-      <section className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-24">
-        <SectionHeading
-          title="Training for every goal"
-          description="Getting back into shape, looking for a new hobby, or discovering your true potential. There’s a place for you here."
-        />
-        <div className="grid gap-px overflow-hidden rounded-(--radius-card) border bg-border sm:grid-cols-2">
-          {offerings.map((o, i) => {
-            const Icon = offeringIcons[i]
-            return (
-              <div key={o.title} className="flex gap-4 bg-background p-8">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-(--radius-button) bg-brand/10 text-brand">
-                  <Icon className="size-6" aria-hidden="true" />
-                </span>
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-xl font-bold">{o.title}</h3>
-                  <p className="text-muted-foreground">{o.description}</p>
+      {/* ---------- Training for every goal ---------- */}
+      <section className="border-b">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24">
+          <SectionHeading
+            title="Training for every goal"
+            description="Getting back into shape, looking for a new hobby, or discovering your true potential. There’s a place for you here."
+          />
+          <div className="grid gap-px overflow-hidden rounded-(--radius-card) border bg-border sm:grid-cols-2">
+            {offerings.map((o, i) => {
+              const Icon = offeringIcons[i]
+              return (
+                <div key={o.title} className="flex gap-4 bg-background p-8">
+                  <span className="flex size-12 flex-none items-center justify-center rounded-(--radius-button) bg-brand/12 text-brand">
+                    <Icon className="size-5" aria-hidden="true" />
+                  </span>
+                  <div className="flex flex-col gap-1.5">
+                    <h3 className="text-xl font-bold">{o.title}</h3>
+                    <p className="text-[15px] text-muted-foreground">{o.description}</p>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </section>
 
-      {/* ---------- In action ---------- */}
-      <section className="border-y bg-card/40 py-24">
-        <div className="mx-auto mb-10 flex max-w-6xl flex-wrap items-end justify-between gap-6 px-4">
+      {/* ---------- Gallery ---------- */}
+      <section className="overflow-hidden py-24">
+        <div className="mx-auto mb-10 flex max-w-6xl flex-wrap items-end justify-between gap-5 px-4">
           <SectionHeading title="We don’t mess around" description="Real fighters. Real moments. Red Horse in motion." />
-          <Button asChild variant="outline" size="lg" className="font-heading tracking-wide uppercase">
+          <Button
+            asChild
+            variant="outline"
+            size="sm"
+            className="h-9 border-border bg-card font-heading text-[13px] font-bold tracking-[0.04em] uppercase hover:bg-secondary"
+          >
             <Link href="/in-action/">
               See the gallery <ArrowRightIcon />
             </Link>
           </Button>
         </div>
-        <div className="relative">
-          <Marquee pauseOnHover className="[--duration:60s]">
-            {gallery.slice(0, 12).map((g) => (
-              <Image
-                key={g.src}
-                src={g.src}
-                alt={g.alt}
-                width={400}
-                height={240}
-                className="h-48 w-80 rounded-(--radius-card) border object-cover sm:h-56 sm:w-96"
-              />
-            ))}
-          </Marquee>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-background sm:w-40" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background sm:w-40" />
-        </div>
+        <Marquee pauseOnHover className="[--duration:70s] [--gap:1rem]">
+          {gallery.slice(0, 12).map((g) => (
+            <Image
+              key={g.src}
+              src={g.src}
+              alt={g.alt}
+              width={382}
+              height={222}
+              className="h-[222px] w-[382px] rounded-(--radius-card) border object-cover"
+            />
+          ))}
+        </Marquee>
       </section>
+
       <CallToAction />
     </>
   )

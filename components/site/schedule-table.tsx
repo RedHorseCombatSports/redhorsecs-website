@@ -24,7 +24,7 @@ export function ScheduleTable() {
             <TabsTrigger
               key={c.id}
               value={c.id}
-              className="flex-none px-4 py-2.5 font-heading text-base tracking-wide uppercase data-active:text-brand! after:bg-brand!"
+              className="flex-none px-3.5 py-2.5 font-heading text-[13px] font-bold tracking-[0.06em] uppercase data-active:text-brand! after:bg-brand!"
             >
               {c.name}
             </TabsTrigger>
@@ -35,11 +35,8 @@ export function ScheduleTable() {
       {classes.map((c) => (
         // forceMount keeps every class in the static HTML (for search engines); inactive tabs are hidden.
         <TabsContent key={c.id} value={c.id} forceMount className="flex flex-col gap-4 data-[state=inactive]:hidden">
-          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 className="text-2xl font-bold">{c.name}</h3>
-            <span className="font-heading text-sm font-semibold tracking-wider text-brand uppercase">{c.level}</span>
-          </div>
-          <p className="text-base text-muted-foreground">{c.description}</p>
+          <h3 className="text-[22px] font-bold">{c.name}</h3>
+          <p className="text-[15px] text-muted-foreground">{c.description}</p>
           <Table>
             <caption className="sr-only">{c.name} class times at Red Horse Combat Sports</caption>
             <TableHeader>

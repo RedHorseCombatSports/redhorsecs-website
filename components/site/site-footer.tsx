@@ -26,16 +26,16 @@ function InstagramIcon(props: React.ComponentProps<"svg">) {
 /** The one place all contact details live together (NAP block + hours), on every page. */
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-card/40 pb-20 sm:pb-0">
+    <footer className="border-t bg-surface pb-20 sm:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
           <Link href="/" aria-label={`${site.name} home`} className="w-fit">
             <Image src="/images/logo-nav.png" alt="Red Horse Combat Sports logo" width={80} height={56} className="h-14 w-auto" />
           </Link>
           <p className="max-w-xs text-sm text-muted-foreground">
-            {site.descriptor}. Your first class is free.
+            {site.descriptor}. Your first class is on us.
           </p>
-          <Button asChild className="w-fit font-heading tracking-wide uppercase">
+          <Button asChild size="sm" className="w-fit font-heading text-[13px] font-bold tracking-[0.04em] uppercase">
             <Link href="/free-class/">{cta.primary}</Link>
           </Button>
           <div className="flex gap-3">

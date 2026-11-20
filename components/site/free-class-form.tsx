@@ -77,7 +77,7 @@ export function FreeClassForm() {
       netlify-honeypot="bot-field"
       noValidate
       onSubmit={onSubmit}
-      className="flex flex-col gap-6 rounded-(--radius-card) border bg-card p-6 shadow-(--shadow-card) sm:p-8"
+      className="flex flex-col gap-6 rounded-(--radius-card) border bg-card p-6 sm:p-8"
     >
       <input type="hidden" name="form-name" value="free-class" />
       <input type="hidden" name="subject" value="New free class request from the website" />

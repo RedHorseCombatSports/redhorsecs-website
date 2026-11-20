@@ -1,5 +1,5 @@
 /*
- * DESIGN TOKENS — Red Horse Combat Training
+ * DESIGN TOKENS — Red Horse Combat Sports
  *
  * Brand taken from redhorsecs.com: red #ED2D2D, near-black #1B1C21 / #111111,
  * white, Roboto Condensed headings. The site is dark-only (html has class="dark"),
@@ -14,6 +14,7 @@
     --palette-red: #ed2d2d;        /* brand red: accents, glows, highlights */
     --palette-red-strong: #dc2626; /* button fill (white text passes WCAG AA) */
     --palette-ink: #0e0e10;        /* page background */
+    --palette-graphite: #141417;   /* header, footer, alternate sections */
     --palette-coal: #1b1c21;       /* cards, panels */
     --palette-charcoal: #26272e;   /* raised surfaces, inputs */
     --palette-white: #f7f7f8;
@@ -22,6 +23,7 @@
     /* ---- Semantic tokens ---- */
     --background: var(--palette-ink);
     --foreground: var(--palette-white);
+    --surface: var(--palette-graphite);
     --card: var(--palette-coal);
     --card-foreground: var(--palette-white);
     --popover: var(--palette-coal);
@@ -60,8 +62,8 @@
 
     /* ---- Shape ---- */
     --radius: 0.375rem;
-    --radius-card: 12px;
-    --radius-button: 6px;
+    --radius-card: 6px;
+    --radius-button: 4px;
     --radius-tag: 4px;
 
     /* ---- Shadows ---- */

@@ -1,6 +1,8 @@
+import Image from "next/image"
+
 import { cn } from "@/lib/utils"
 
-/** Title band used at the top of every inner page. */
+/** Title band at the top of every inner page: lightning photo under a left-to-right dark fade. */
 export function PageHero({
   title,
   subtitle,
@@ -11,16 +13,21 @@ export function PageHero({
   className?: string
 }) {
   return (
-    <section
-      className={cn(
-        "relative overflow-hidden border-b bg-[url('/images/hero-bg.jpg')] bg-cover bg-center",
-        className
-      )}
-    >
-      <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/70 to-background" />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-4 px-4 py-20 sm:py-28">
-        <h1 className="max-w-3xl text-5xl leading-none font-bold sm:text-7xl">{title}</h1>
-        {subtitle && <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">{subtitle}</p>}
+    <section className={cn("relative isolate overflow-hidden border-b", className)}>
+      <Image
+        src="/images/hero-bg.jpg"
+        alt=""
+        fill
+        priority
+        className="-z-20 object-cover object-right"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-linear-to-r from-background/95 via-background/75 to-background/45"
+      />
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 pt-20 pb-16 sm:pt-26 sm:pb-22">
+        <h1 className="max-w-2xl text-4xl leading-[1.02] font-bold sm:text-[56px]">{title}</h1>
+        {subtitle && <p className="max-w-xl text-lg text-muted-foreground">{subtitle}</p>}
       </div>
     </section>
   )
@@ -36,7 +43,7 @@ export function SectionHeading({
   align?: "left" | "center"
 }) {
   return (
-    <div className={cn("flex flex-col gap-3", align === "center" && "items-center text-center")}>
+    <div className={cn("flex flex-col gap-4", align === "center" && "items-center text-center")}>
       <h2 className="max-w-3xl text-4xl leading-none font-bold sm:text-5xl">{title}</h2>
       {description && <p className="max-w-2xl text-lg text-muted-foreground">{description}</p>}
     </div>

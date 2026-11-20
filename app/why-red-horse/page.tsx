@@ -19,7 +19,7 @@ export default function WhyPage() {
     <>
       <PageHero
         title="Why train with Red Horse?"
-        subtitle="Whether you’re getting back into shape, looking for a new hobby, or discovering your true potential, our focus is on steady, real-world progress. Using our iron-clad method of improvement, which emphasizes mutual assistance through collaborative effort, our students leave classes stronger, both physically and mentally."
+        subtitle="Whether you’re getting back into shape, looking for a new hobby, or discovering your potential. Our focus is on steady progress. Our students leave classes stronger, both physically and mentally."
       />
 
       <section className="mx-auto flex max-w-6xl flex-col gap-24 px-4 py-24">
@@ -80,15 +80,12 @@ export default function WhyPage() {
             <SectionHeading title="The Red Horse difference" />
             <div className="grid gap-3 sm:grid-cols-2">
               {difference.map((d) => (
-                <div key={d.title} className="rounded-(--radius-card) border bg-card p-5 shadow-(--shadow-card)">
-                  <p className="font-heading text-lg font-bold text-brand uppercase">{d.title}</p>
+                <div key={d.title} className="rounded-(--radius-card) border bg-card p-5">
+                  <h3 className="font-heading text-[17px] font-bold text-brand uppercase">{d.title}</h3>
                   <p className="text-sm text-muted-foreground">{d.description}</p>
                 </div>
               ))}
             </div>
-            <p className="font-heading text-xl font-semibold uppercase">
-              Your first class is <span className="text-brand">free</span>
-            </p>
           </div>
         </BlurFadeIn>
       </section>

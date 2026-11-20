@@ -8,7 +8,6 @@ import { MenuIcon, PhoneIcon } from "lucide-react"
 import { cta, footerNav, nav, site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import StarBorder from "@/components/react-bits/StarBorder"
 import {
   Sheet,
   SheetClose,
@@ -32,7 +31,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b bg-surface">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4">
           <Link href="/" className="flex shrink-0 items-center gap-2" aria-label={`${site.name} home`}>
             <Image src="/images/logo-nav.png" alt="Red Horse Combat Sports logo" width={57} height={40} priority className="h-10 w-auto" />
@@ -44,7 +43,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-md px-3 py-2 font-heading text-sm font-medium tracking-wide text-muted-foreground uppercase transition-colors hover:text-foreground",
+                  "rounded-md px-3 py-2 font-heading text-[13px] font-semibold tracking-[0.06em] text-muted-foreground uppercase transition-colors hover:text-foreground",
                   isActive(item.href) && "text-foreground"
                 )}
                 aria-current={isActive(item.href) ? "page" : undefined}
@@ -61,24 +60,13 @@ export function SiteHeader() {
             >
               <PhoneIcon className="size-4 text-brand" aria-hidden="true" /> {site.phone}
             </a>
-            {/* React Bits StarBorder draws on a canvas, so it needs literal colors for the stars (brand red from tokens.css); surface, text and border use tokens. */}
-            <StarBorder
-              as={Link}
-              href="/free-class/"
-              theme="dark"
-              color="#ed2d2d"
-              trailColor="#ff8a8a"
-              backgroundColor="var(--background)"
-              textColor="var(--foreground)"
-              borderColor="color-mix(in srgb, var(--brand) 40%, transparent)"
-              radius={6}
-              thickness={1.5}
-              duration={4}
-              hover="brighten"
-              className="hidden px-5 py-2.5 font-heading text-sm font-semibold tracking-wide uppercase sm:inline-flex"
+            <Button
+              asChild
+              variant="outline"
+              className="hidden h-10 border-primary bg-background px-5 font-heading text-[13px] font-bold tracking-[0.04em] uppercase hover:bg-secondary sm:inline-flex"
             >
-              {cta.nav}
-            </StarBorder>
+              <Link href="/free-class/">{cta.nav}</Link>
+            </Button>
 
             <Sheet>
               <SheetTrigger asChild>

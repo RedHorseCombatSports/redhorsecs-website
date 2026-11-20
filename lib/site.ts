@@ -35,7 +35,8 @@ export const site = {
 
 /** One CTA vocabulary, used everywhere (copy spec). */
 export const cta = {
-  primary: "Claim your free class",
+  primary: "Claim your first class",
+  hero: "Claim your first class on us",
   nav: "Free class",
   submit: "Book my free class",
   call: `Call ${site.phone}`,
@@ -58,7 +59,7 @@ export const nav = [
 
 /** Footer links: everything, including FAQ (footer only) and the secondary pages. */
 export const footerNav = [
-  { href: "/free-class/", label: "Free class" },
+  { href: "/free-class/", label: "Sign up for first class" },
   { href: "/schedule/", label: "Schedule" },
   { href: "/pricing/", label: "Pricing" },
   { href: "/faq/", label: "FAQ" },
@@ -68,15 +69,15 @@ export const footerNav = [
 ]
 
 export const offerings = [
-  { title: "Group Kickboxing Classes", description: "High-energy classes in small groups, coached every round." },
-  { title: "Private Training", description: "One-on-one coaching built around your goals." },
-  { title: "Community Engagement", description: "Events and opportunities to train and connect with the team." },
-  { title: "Self-Defense Workshops", description: "Practical skills to protect yourself with confidence." },
+  { title: "Group kickboxing classes", description: "High-energy classes in small groups, coached every round." },
+  { title: "Private training", description: "One-on-one coaching built around your goals." },
+  { title: "Community engagement", description: "Events and opportunities to train and connect with the team." },
+  { title: "Self-defense workshops", description: "Practical skills to protect yourself with confidence." },
 ]
 
 export const learnings = [
   "How to strike with accuracy, speed, and power",
-  "Defensive skills like blocking, slipping, and smart footwork",
+  "Defensive skills like blocking, slipping, and footwork",
   "Ways to build strength, endurance, and overall conditioning",
   "Techniques to increase flexibility and prevent injury",
   "Mental focus, discipline, and confidence inside and outside the gym",

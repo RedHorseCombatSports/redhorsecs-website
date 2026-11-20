@@ -17,7 +17,7 @@ export default function LocationPage() {
     <>
       <PageHero title="Visit Red Horse Combat Sports" subtitle="Questions, or want to stop by? Here’s where to find us." />
       <section className="mx-auto grid max-w-6xl gap-6 px-4 py-20 lg:grid-cols-[1fr_1.6fr]">
-        <div className="flex flex-col gap-6 rounded-(--radius-card) border bg-card p-8 shadow-(--shadow-card)">
+        <div className="flex flex-col gap-6 rounded-(--radius-card) border bg-card p-8">
           <h2 className="text-3xl font-bold">{site.name}</h2>
           <ul className="flex flex-col gap-4 text-lg">
             <li className="flex gap-3">
