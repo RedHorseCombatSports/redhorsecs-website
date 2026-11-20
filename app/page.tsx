@@ -92,10 +92,10 @@ export default function HomePage() {
             </div>
           </div>
           <Image
-            src="/images/logo.png"
-            alt="Red Horse Kickboxing logo"
+            src="/images/logo-combat-sports-white.svg"
+            alt="Red Horse Combat Sports logo"
             width={460}
-            height={352}
+            height={320}
             priority
             className="hidden h-auto w-full max-w-[460px] flex-[0_1_460px] lg:block"
           />
