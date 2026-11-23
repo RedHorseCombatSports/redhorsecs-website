@@ -5,6 +5,7 @@ import "./globals.css"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { SiteHeader } from "@/components/site/site-header"
 import { SiteFooter } from "@/components/site/site-footer"
+import { Analytics } from "@/components/site/analytics"
 import { site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </main>
           <SiteFooter />
         </TooltipProvider>
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}

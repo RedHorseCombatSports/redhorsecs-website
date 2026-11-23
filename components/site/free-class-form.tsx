@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { track } from "@/components/site/analytics"
 
 /** Class choices built from the schedule, plus "not sure". */
 const dayRange = (days: string[]) =>
@@ -55,6 +56,7 @@ export function FreeClassForm() {
       })
       if (!res.ok) throw new Error(String(res.status))
       const picked = String(data.get("class"))
+      track("generate_lead", { form_name: "free-class", class_name: picked })
       const query = picked === "Not sure yet" ? "" : `?class=${encodeURIComponent(picked)}`
       router.push(`/free-class/thanks/${query}`)
     } catch {

@@ -9,6 +9,9 @@ export const site = {
   legalName: "Red Horse Combat Sports LLC",
   descriptor: "Kickboxing gym in Oklahoma City",
   url: "https://www.redhorsecs.com",
+  /** Google Tag Manager container; loads only on analyticsHosts. */
+  gtmId: "GTM-N4HHLWJG",
+  analyticsHosts: ["www.redhorsecs.com", "redhorsecs.com"],
   description:
     "Kickboxing for every level in Oklahoma City. Beginner-friendly classes, real coaching and no egos. Your first class is free. 3718 NW 50th St.",
   address: {
