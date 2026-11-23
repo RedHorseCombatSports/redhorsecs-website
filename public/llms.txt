@@ -22,8 +22,8 @@ Kickboxing gym in Oklahoma City, Oklahoma (legal name Red Horse Combat Sports LL
 
 ## Pages
 
-- [Free class](https://redhorsecs.com/free-class/): how the free first class works and how to book it
-- [Schedule](https://redhorsecs.com/schedule/): weekly class times
-- [Pricing](https://redhorsecs.com/pricing/): memberships, drop-in and private training
-- [FAQ](https://redhorsecs.com/faq/): experience, gear, sparring, youth classes, cost
-- [Visit](https://redhorsecs.com/location/): address, phone and class times
+- [Free class](https://www.redhorsecs.com/free-class/): how the free first class works and how to book it
+- [Schedule](https://www.redhorsecs.com/schedule/): weekly class times
+- [Pricing](https://www.redhorsecs.com/pricing/): memberships, drop-in and private training
+- [FAQ](https://www.redhorsecs.com/faq/): experience, gear, sparring, youth classes, cost
+- [Visit](https://www.redhorsecs.com/location/): address, phone and class times

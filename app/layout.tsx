@@ -24,8 +24,6 @@ export const metadata: Metadata = {
   },
   description: site.description,
   openGraph: { siteName: site.name, locale: "en_US", type: "website" },
-  // Staging copy: keep out of search results until it replaces redhorsecs.com.
-  robots: { index: false, follow: false },
 }
 
 // LocalBusiness schema from the copy spec. Opening hours are left out until they match

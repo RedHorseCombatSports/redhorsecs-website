@@ -41,13 +41,13 @@ All values live in `styles/tokens.css`. Never hard-code colors in components.
 - `public/__forms.html` — hidden Netlify Forms skeleton for the `free-class` form. **Field names must match
   `components/site/free-class-form.tsx` exactly.**
 
-## Launch checklist (not done yet)
+## Launch checklist (launched Nov 2026; www.redhorsecs.com is the primary domain)
 
-- [ ] Remove `robots: { index: false }` in `app/layout.tsx` and the `X-Robots-Tag` header in `netlify.toml`.
+- [x] Remove `robots: { index: false }` in `app/layout.tsx` and the `X-Robots-Tag` header in `netlify.toml`.
 - [ ] Netlify: add a form notification email (must be a Netlify team member).
 - [ ] Add `openingHoursSpecification` to the schema once hours match the Google Business Profile.
-- [ ] Resubmit `https://redhorsecs.com/sitemap.xml` in Search Console after launch.
-- [ ] Point redhorsecs.com DNS at Netlify: change only the `@` A record and `www` CNAME at GoDaddy.
+- [ ] Submit `https://www.redhorsecs.com/sitemap.xml` in Search Console after launch.
+- [x] Point redhorsecs.com DNS at Netlify: change only the `@` A record and `www` CNAME at GoDaddy.
       Do NOT change nameservers — Microsoft 365 email depends on GoDaddy's DNS records.
 
 ## Commands

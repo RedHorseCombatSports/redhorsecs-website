@@ -8,7 +8,7 @@ export const site = {
   shortName: "Red Horse",
   legalName: "Red Horse Combat Sports LLC",
   descriptor: "Kickboxing gym in Oklahoma City",
-  url: "https://redhorsecs.com",
+  url: "https://www.redhorsecs.com",
   description:
     "Kickboxing for every level in Oklahoma City. Beginner-friendly classes, real coaching and no egos. Your first class is free. 3718 NW 50th St.",
   address: {
